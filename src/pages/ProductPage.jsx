@@ -1,8 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import s1 from '../assets/imgs/s1.jpg'
-import s2 from '../assets/imgs/s2.jpg'
-import s3 from '../assets/imgs/s3.jpg'
+import { getImageByIndex, sareeImages } from '../utils/images'
 
 function Thumb({ src, active, onClick }) {
   return (
@@ -25,7 +23,7 @@ export default function ProductPage() {
     colors: ['Red', 'Blue', 'Green'],
     sizes: ['S', 'M', 'L'],
     price: 6999,
-    images: [s1, s2, s3],
+    images: [getImageByIndex(id), getImageByIndex(Number(id) + 1), getImageByIndex(Number(id) + 2)],
     offers: ['Festive Offer: 20% off', 'Extra 5% with cards']
   }), [id])
 

@@ -32,14 +32,14 @@ export default function AboutPage() {
 
       <section className="mt-12">
         <div className="font-medium mb-3">Our Journey</div>
-        <div className="relative pl-8 md:pl-10">
-          <div className="absolute left-3 md:left-4 top-0 bottom-0 w-px bg-gray-200" />
-          <ul className="space-y-6">
+        <div className="relative pl-10">
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-gray-200" />
+          <ul className="space-y-7">
             {timeline.map((t) => (
-              <li key={t.year} className="relative">
-                <span className="absolute -left-2 md:-left-2.5 top-1.5 h-3.5 w-3.5 rounded-full bg-gray-900 ring-4 ring-white" />
-                <div className="text-sm text-gray-500 mb-1">{t.year}</div>
-                <div className="font-medium leading-relaxed">{t.text}</div>
+              <li key={t.year} className="relative pl-3 pt-1">
+                <span className="absolute left-2 top-1.5 h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-gray-900 ring-4 ring-white" />
+                <div className="text-sm text-gray-500 mb-1 pl-2">{t.year}</div>
+                <div className="font-medium leading-relaxed pl-2">{t.text}</div>
               </li>
             ))}
           </ul>

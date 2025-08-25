@@ -1,11 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import s1 from '../assets/imgs/s1.jpg'
-import s2 from '../assets/imgs/s2.jpg'
-import s3 from '../assets/imgs/s3.jpg'
-import s4 from '../assets/imgs/s4.jpg'
-import m1 from '../assets/imgs/m1.jpg'
-import m2 from '../assets/imgs/m2.jpg'
+import { getImageByIndex } from '../utils/images'
 
 function useQuery() {
   const { search } = useLocation()
@@ -24,13 +19,13 @@ const allProducts = Array.from({ length: 120 }).map((_, i) => ({
   availability: i % 7 !== 0,
   popularity: Math.random(),
   price: 1999 + (i % 20) * 200,
-  image: [s1, s2, s3, m1, m2, s4][i % 6]
+  image: getImageByIndex(i)
 }))
 
 export default function CollectionsPage() {
   const q = useQuery()
   const [filters, setFilters] = useState({
-    priceMax: Number(q.get('priceMax')) || 99999,
+    priceMax: Number(q.get('priceMax')) || 30000,
     color: q.get('color') || 'any',
     fabric: q.get('fabric') || 'any',
     weave: q.get('weave') || 'any',
@@ -89,7 +84,7 @@ export default function CollectionsPage() {
         <aside className="lg:col-span-3 space-y-4">
           <div className="rounded-2xl border border-gray-200 p-4">
             <div className="font-medium mb-2">Price</div>
-            <input type="range" min="999" max="99999" step="100" value={filters.priceMax} onChange={(e) => setFilters({ ...filters, priceMax: Number(e.target.value) })} className="w-full" />
+            <input type="range" min="0" max="30000" step="100" value={filters.priceMax} onChange={(e) => setFilters({ ...filters, priceMax: Number(e.target.value) })} className="w-full" />
             <div className="text-sm text-gray-600 mt-1">Up to ₹{filters.priceMax.toLocaleString()}</div>
           </div>
 

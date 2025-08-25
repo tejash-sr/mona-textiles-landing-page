@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { getImageByIndex } from '../utils/images'
 
 export default function WishlistPage() {
   const navigate = useNavigate()
@@ -26,7 +27,7 @@ export default function WishlistPage() {
     id,
     title: `Wishlist Item ${id}`,
     price: 2999 + id * 100,
-    image: `https://picsum.photos/seed/w${id}/800/1000`
+    image: getImageByIndex(id)
   }))
 
   return (

@@ -1,10 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
-import s1 from '../assets/imgs/s1.jpg'
-import s2 from '../assets/imgs/s2.jpg'
-import s3 from '../assets/imgs/s3.jpg'
-import s4 from '../assets/imgs/s4.jpg'
-import m1 from '../assets/imgs/m1.jpg'
-import m2 from '../assets/imgs/m2.jpg'
+import { sareeImages, menImages, getImageByIndex } from '../utils/images'
 
 function CategoryCard({ title, image, to }) {
   return (
@@ -38,10 +33,24 @@ function ProductCard({ product }) {
 
 const demoProducts = Array.from({ length: 8 }).map((_, i) => ({
   id: i + 1,
-  title: ['Banarasi Saree', 'Kanjivaram Saree', 'Embroidered Kurta', 'Linen Shirt'][i % 4],
-  fabric: ['Silk', 'Silk Blend', 'Cotton', 'Linen'][i % 4],
-  price: (2999 + i * 200).toLocaleString(),
-  image: [s1, s2, m1, m2][i % 4]
+  title: [
+    'Banarasi Saree',
+    'Kanjivaram Saree',
+    'Chiffon Saree',
+    'Organza Saree',
+    'Embroidered Kurta',
+    'Linen Shirt',
+    'Silk Kurta',
+    'Printed Shirt'
+  ][i],
+  fabric: [
+    'Silk', 'Silk Blend', 'Chiffon', 'Organza', 'Cotton Blend', 'Linen', 'Silk', 'Cotton'
+  ][i],
+  price: (2999 + i * 350).toLocaleString(),
+  image: [
+    sareeImages[0], sareeImages[1], sareeImages[4], sareeImages[5],
+    menImages[0], menImages[1], menImages[2], menImages[3]
+  ][i]
 }))
 
 export default function HomePage() {
@@ -50,7 +59,12 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative">
         <div className="relative">
-          <img src={s1} alt="" className="h-[64vh] w-full object-cover" />
+          <img
+            src={sareeImages[0]}
+            alt=""
+            className="h-[72vh] w-full object-cover"
+            style={{ filter: 'brightness(1.1) contrast(1.1) saturate(1.15) sharpness(0.2)' }}
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/20" />
         </div>
         <div className="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
@@ -73,10 +87,10 @@ export default function HomePage() {
           <NavLink to="/collections" className="text-sm text-gray-600 hover:text-gray-900">View all →</NavLink>
         </div>
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <CategoryCard title="Sarees" to="/collections?category=sarees" image={s2} />
-          <CategoryCard title="Salwar" to="/collections?category=salwar" image={s3} />
-          <CategoryCard title="Men's" to="/collections?category=mens" image={m1} />
-          <CategoryCard title="Kids" to="/collections?category=kids" image={m2} />
+          <CategoryCard title="Sarees" to="/collections?category=sarees" image={sareeImages[2]} />
+          <CategoryCard title="Salwar" to="/collections?category=salwar" image={sareeImages[3]} />
+          <CategoryCard title="Men's" to="/collections?category=mens" image={menImages[0]} />
+          <CategoryCard title="Kids" to="/collections?category=kids" image={menImages[1]} />
         </div>
       </section>
 
