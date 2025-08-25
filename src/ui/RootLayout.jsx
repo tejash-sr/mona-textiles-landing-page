@@ -35,7 +35,7 @@ export default function RootLayout() {
             </span>
             <div className="leading-tight">
               <div className="text-lg font-semibold tracking-wide">Mona Textiles</div>
-              <div className="text-xs text-gray-500">Timeless Craftsmanship</div>
+              <div className="text-xs text-black">VANNAGALIN VARNAJALAM</div>
             </div>
           </NavLink>
 
@@ -112,8 +112,9 @@ export default function RootLayout() {
               <li><NavLink to="/contact#faq">FAQ</NavLink></li>
               <li><NavLink to="/contact#returns">Returns & Exchange</NavLink></li>
               <li><a href="#">WhatsApp: +91 96003 04706</a></li>
-              <li><a href="#">Address : Mettur Road, Kolathur-Check Post, Salem - 636301: +91 96003 04706</a></li>
-              <li><a href="#">help@monatextiles.com</a></li>
+              <li><a href="#">Address : Mettur Road, Near Check Post, Kolathur, Mettur TK, Salem – 636301</a></li>
+              <li><a href="#">monatextiles2015@gmail.com</a></li>
+              <li><a href="#">GST No: 33BNDPM6142A1ZK</a></li>
             </ul>
           </div>
           <div>
@@ -125,7 +126,12 @@ export default function RootLayout() {
             </div>
           </div>
         </div>
-        <div className="py-6 text-center text-xs text-gray-500">© {new Date().getFullYear()} Mona Textiles. All rights reserved.</div>
+        <div className="py-6 text-center">
+          <div className="mb-3 text-lg font-bold text-green-700 bg-green-50 py-2 rounded-full">
+            🌾 Save Farmers! Save Farming! 🌾
+          </div>
+          <div className="text-xs text-gray-500">© {new Date().getFullYear()} Mona Textiles. All rights reserved.</div>
+        </div>
       </footer>
     </div>
   )

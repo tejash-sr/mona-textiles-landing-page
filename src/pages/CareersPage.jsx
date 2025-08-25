@@ -1,3 +1,7 @@
+import { useEffect, useMemo, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import applicationForm from '../assets/Application Form.pdf'
+
 export default function CareersPage() {
   const roles = [
     { title: 'Store Manager', location: 'Chennai', type: 'Full-time' },
@@ -7,7 +11,16 @@ export default function CareersPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-2xl font-semibold">Careers</h1>
+      <div className="flex items-center justify-between">
+    <h1 className="text-3xl font-semibold">Careers</h1>
+    <a 
+      href={applicationForm} 
+      download="Mona_Textiles_Application_Form.pdf"
+      className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-full transition-colors shadow-lg hover:shadow-xl"
+    >
+      📄 Download Application Form
+    </a>
+    </div>
 
       <section className="mt-6 space-y-4">
         {roles.map((r) => (
@@ -29,6 +42,8 @@ export default function CareersPage() {
       </section>
 
       <div className="mt-8 text-sm text-gray-600">HR Contact: hr@monatextiles.com • +91 90000 56789</div>
+      
+      
     </div>
   )
 }
