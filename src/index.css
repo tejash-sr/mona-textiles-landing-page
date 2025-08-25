@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+html, body, #root { height: 100%; }
+html { scroll-behavior: smooth; }
+body {
+  @apply text-gray-900 antialiased;
+  background-color: #f7f7fb;
+  background-image:
+    radial-gradient(1200px 600px at -10% -20%, rgba(255, 182, 193, 0.18), transparent 40%),
+    radial-gradient(900px 500px at 110% -10%, rgba(173, 216, 230, 0.18), transparent 40%),
+    radial-gradient(800px 500px at 50% 120%, rgba(221, 160, 221, 0.18), transparent 40%);
+  background-attachment: fixed;
+}
+
+@layer base {
+  h1, h2, h3 { @apply font-serif tracking-tight; }
+  button, a { @apply transition duration-200; }
+  button { @apply hover:-translate-y-0.5 hover:shadow-md; }
+}
+@layer utilities {
+    .shadow-card {
+      --tw-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.25);
+      --tw-shadow-colored: 0 10px 30px -10px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000),
+        var(--tw-shadow);
+    }
+  }
+.font-display { font-family: 'Playfair Display', serif; }
+.btn-primary { @apply inline-flex items-center gap-2 rounded-full bg-gray-900 text-white px-5 py-3 shadow-lg hover:bg-black hover:-translate-y-0.5 hover:shadow-xl transition; }
+.btn-outline { @apply inline-flex items-center gap-2 rounded-full border border-gray-300 px-5 py-3 hover:border-gray-400 hover:-translate-y-0.5 hover:shadow-md transition; }
