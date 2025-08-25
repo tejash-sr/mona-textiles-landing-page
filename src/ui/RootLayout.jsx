@@ -1,6 +1,6 @@
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-
+import logo from '../assets/imgs/logo.png';
 function classNames(...args) {
   return args.filter(Boolean).join(' ')
 }
@@ -31,7 +31,7 @@ export default function RootLayout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-4">
           <NavLink to="/" className="flex items-center gap-2">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full overflow-hidden bg-gray-200">
-              <img src="src\assets\imgs\logo.png" alt="Mona Textiles" className="h-full w-full object-contain p-1" onError={(e) => { e.currentTarget.src = 'https://dummyimage.com/80x80/111/fff.png&text=M'; }} />
+              <img src={logo} alt="Mona Textiles" className="h-full w-full object-contain p-1" onError={(e) => { e.currentTarget.src = 'https://dummyimage.com/80x80/111/fff.png&text=M'; }} />
             </span>
             <div className="leading-tight">
               <div className="text-lg font-semibold tracking-wide">Mona Textiles</div>
