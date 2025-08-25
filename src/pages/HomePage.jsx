@@ -69,6 +69,12 @@ export default function HomePage() {
         </div>
         <div className="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
           <div className="text-white">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-white/90 ring-2 ring-white/70 overflow-hidden">
+                <img src="src\assets\imgs\logo.png" alt="Mona Textiles" className="h-full w-full object-contain p-1.5" />
+              </span>
+              <div className="text-xl font-semibold tracking-wide drop-shadow">Mona Textiles</div>
+            </div>
             <div className="text-sm uppercase tracking-widest opacity-80">Festive 2025</div>
             <h1 className="mt-3 text-4xl sm:text-5xl font-semibold leading-tight">Weaves of Heritage, Designs for Today</h1>
             <p className="mt-4 max-w-xl opacity-90">Discover sarees, salwar, menswear and kidswear crafted with love. Exclusive festive offers live now.</p>
