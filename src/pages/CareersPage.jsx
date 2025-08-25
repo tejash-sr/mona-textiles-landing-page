@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import applicationForm from '../assets/Application Form.pdf'
+
 
 export default function CareersPage() {
   const roles = [
@@ -14,7 +14,7 @@ export default function CareersPage() {
       <div className="flex items-center justify-between">
     <h1 className="text-3xl font-semibold">Careers</h1>
     <a 
-      href={applicationForm} 
+      href="/application-form.pdf" 
       download="Mona_Textiles_Application_Form.pdf"
       className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-full transition-colors shadow-lg hover:shadow-xl"
     >
